@@ -4,13 +4,9 @@ from matplotlib import pyplot
 from statsmodels.tsa.arima_model import ARIMA
 from sklearn.metrics import mean_squared_error
  
-# def parser(x):
-# 	print("Date: ", x)
-# 	return datetime.strptime('190'+x, '%Y-%m')
- 
 series = read_csv('item1.csv', header=0, index_col=0, squeeze=True)
 X = series.values
-print("this is X: ", X)
+# print("this is X: ", X)
 size = int(len(X) * 0.66)
 train, test = X[0:size], X[size:len(X)]
 history = [x for x in train]
