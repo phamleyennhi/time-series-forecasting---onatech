@@ -12,7 +12,7 @@ train, test = X[0:size], X[size:len(X)]
 history = [x for x in train]
 predictions = list()
 for t in range(len(test)):
-	model = ARIMA(history, order=(5,1,0))
+	model = ARIMA(history, order=(5,1,0)) #smoothing.
 	model_fit = model.fit(disp=0)
 	output = model_fit.forecast()
 	yhat = output[0]
@@ -26,3 +26,10 @@ print('Test MSE: %.3f' % error)
 pyplot.plot(test)
 pyplot.plot(predictions, color='red')
 pyplot.show()
+
+
+
+# do this for all items (category) - put inside the loop.
+# MSE: 20~
+# use the latest data.
+# decomposition of the data.
